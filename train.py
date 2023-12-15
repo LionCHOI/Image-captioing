@@ -10,7 +10,7 @@ from torch.nn.utils.rnn import pack_padded_sequence
 from torchvision import transforms
 
 from dataset import ImageCaptionDataset
-from transformer_decoder import Seq2SeqDecoder, create_mask
+from decoder import Seq2SeqDecoder, create_mask
 from encoder import Encoder
 from utils import AverageMeter, accuracy, calculate_caption_lengths
 
