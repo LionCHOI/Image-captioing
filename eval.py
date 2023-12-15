@@ -2,14 +2,16 @@ import torch.optim
 import torch.utils.data
 import torchvision.transforms as transforms
 from datasets import *
-from utils import *
 import argparse, json
-from dataset import ImageCaptionDataset
 from torch.autograd import Variable
 from tqdm import tqdm
+
 # model
-from encoder import Encoder
-from transformer_decoder import Seq2SeqDecoder, translate
+from include.encoder import Encoder
+from include.decoder import Seq2SeqDecoder, translate
+from include.dataset import ImageCaptionDataset
+from include.utils import *
+
 # metric
 import evaluate
 metric_meteor = evaluate.load("meteor")
