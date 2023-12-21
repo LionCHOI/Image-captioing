@@ -316,8 +316,8 @@ if __name__ == "__main__":
                         help='step size for learning rate annealing (default: 5)')
     parser.add_argument('--log-interval', type=int, default=100, metavar='L',                           # log-interval 설정 (default:100)
                         help='number of batches to wait before logging training stats (default: 100)')  
-    parser.add_argument('--data', type=str, default='data/coco/max_caption_5',                          # data path 설정 (default:data/coco/max_caption_5)
-                        help='path to data images (default: data/coco/max_caption_5)')
+    parser.add_argument('--data', type=str, default='data/coco',                                        # data path 설정 (default:data/coco)
+                        help='path to data images (default: data/coco)')
     parser.add_argument('--network', choices=['vgg19', 'resnet152', 'densenet161', 'vit'],              # encoder network 설정 (default:vit)
                         default='vit',
                         help='Network to use in the encoder (default: vgg19)')

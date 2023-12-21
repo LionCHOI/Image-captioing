@@ -131,7 +131,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Image Captioning project')
     parser.add_argument('--batch-size', type=int, default=1, metavar='N',
                         help='batch size for training (default: 64)')
-    parser.add_argument('--data', type=str, default='data/coco/max_caption_5',
+    parser.add_argument('--data', type=str, default='data/coco',
                         help='path to data images (default: data/coco)')
     parser.add_argument('--checkpoint', type=str, default='./model/model_vit_4_new_1e-5.pth',
                         help='path to data images (default: data/coco)')
