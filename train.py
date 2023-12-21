@@ -56,9 +56,9 @@ def main(args):
     decoder.to(device)                                          # decoder model을 GPU에 넣기
 
     # training setting  ---------------------------------------------------------------------
-    optimizer = optim.Adam(decoder.parameters(), lr=1e-5, betas=(0.9, 0.98), eps=1e-9)  # opimizer 설정 
-    scheduler = optim.lr_scheduler.StepLR(optimizer, args.step_size)                    # Scheduler 설정 (epoch이 작아서 코드상 쓰이지 않음)
-    cross_entropy_loss = nn.CrossEntropyLoss().to(device)                               # loss 함수 설정
+    optimizer = optim.Adam(decoder.parameters(), lr=args.lr, betas=(0.9, 0.98), eps=1e-9)   # opimizer 설정 
+    scheduler = optim.lr_scheduler.StepLR(optimizer, args.step_size)                        # Scheduler 설정 (epoch이 작아서 코드상 쓰이지 않음)
+    cross_entropy_loss = nn.CrossEntropyLoss().to(device)                                   # loss 함수 설정
 
     # data setting  -------------------------------------------------------------------------
     train_loader = torch.utils.data.DataLoader(     # train loader 설정
@@ -310,7 +310,7 @@ if __name__ == "__main__":
                         help='batch size for training (default: 32)')
     parser.add_argument('--epochs', type=int, default=5, metavar='E',                                   # epoch 설정 (default:5)
                         help='number of epochs to train for (default: 5)')                             
-    parser.add_argument('--lr', type=float, default=5e-5, metavar='LR',                                 # learning rate 설정 (default:5e-5)
+    parser.add_argument('--lr', type=float, default=1e-5, metavar='LR',                                 # learning rate 설정 (default:5e-5)
                         help='learning rate of the decoder (default: 5e-5)')
     parser.add_argument('--step-size', type=int, default=5,                                             # step size 설정 (default:5)
                         help='step size for learning rate annealing (default: 5)')
